@@ -1,0 +1,42 @@
+# Goals
+Written below are the goals of this project ordered chronologically and by importance
+
+- [x] Osu Map Parsing
+- [ ] Player
+    - [ ] Renderer
+        - [ ] osu!standard
+        - [ ] osu!mania
+        - [ ] osu!taiko
+        - [ ] osu!ctb
+    - [ ] Local Caching
+        - [ ] Caching
+        - [ ] Monitor
+- [x] User
+    - [x] Login
+    - [ ] Bio
+    - [ ] Settings
+    - [ ] Add Map
+    - [ ] User Collections
+    - [ ] Scores
+    - [ ] Friends
+    - [ ] DM
+- [ ] Footer
+- [ ] Home Page
+- [ ] Elastic Search
+    - [ ] Map Search
+    - [ ] Global Search
+    - [ ] User Search
+- [ ] Clean Up
+- [ ] Remove Pre-Pre-Alpha tag
+    - [ ] Put in Pre-Alpha tag
+- [ ] EXTENSIVE testing
+- [ ] Remove PP
+- [ ] Forum
+- [ ] Difficulty Calculator
+- [ ] Game Stats
+- [ ] Other Parsers
+    - [ ] Stepmania
+    - [ ] O2jam
+    - [ ] Native (?)
+- [ ] Editor (Far far far far future)
+

@@ -1,0 +1,10 @@
+{{ define "base" }}
+  {{ template "base/head" . }}
+  <body>
+    {{ template "base/navbar" . }}
+    {{ template "main" . }}
+    {{ template "base/footer" . }}
+  </body>
+  {{ template "base/flash" . }}
+{{ end }}
+

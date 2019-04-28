@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="section medium">
+  <div class="container cols">
+    <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+      <div class="card">
+        <form action="{{.Settings.BaseURL}}user/signup" method="POST">
+          <div class="card-header">
+            Sign up
+          </div>
+          <div class="card-item">
+            <div class="form-field">
+              {{ with .Form.Errors.username }}
+                <label class="error"> {{.}} </label>
+              {{ end }}
+              <input type="text" name="username" placeholder="username" value="{{.Form.Get "username"}}">
+            </div>
+
+            <div class="form-field">
+              {{ with .Form.Errors.pass }}
+                <label class="error"> {{.}} </label>
+              {{ end }}
+              <input type="password" name="pass" placeholder="password" value="{{.Form.Get "pass"}}">
+            </div>
+
+            <div class="form-field">
+              {{ with .Form.Errors.pass_confirm }}
+                <label class="error"> {{.}} </label>
+              {{ end }}
+              <input type="password" name="pass_confirm" placeholder="password confirm" value="{{.Form.Get "pass_confirm"}}">
+            </div>
+
+            <div class="form-field">
+              {{ with .Form.Errors.email }}
+                <label class="error"> {{.}} </label>
+              {{ end }}
+              <input type="text" name="email" placeholder="email" value="{{.Form.Get "email"}}">
+            </div>
+
+            <div class="form-field">
+              {{ with .Form.Errors.email_confirm }}
+                <label class="error"> {{.}} </label>
+              {{ end }}
+              <input type="text" name="email_confirm" placeholder="email confirm" value="{{.Form.Get "email_confirm"}}">
+            </div>
+
+            <div class="form-field">
+              <button type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

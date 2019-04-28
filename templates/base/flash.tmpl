@@ -1,0 +1,9 @@
+{{define "base/flash"}}
+<div class="flash-container">
+  {{range .Flashes}}
+    <div class="flash-message {{.Type}}">
+      {{.Message}}
+    </div>
+  {{end}}
+</div>
+{{end}}

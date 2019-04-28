@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="section medium">
+  <div class="container cols">
+    <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+      <div class="card">
+        <form action="{{.Settings.BaseURL}}user/login" method="POST">
+          <div class="card-header">
+            Login
+          </div>
+          <div class="card-item">
+            <div class="form-field">
+              {{ with .Form.Errors.email }}
+                <label class="error"> {{.}} </label>
+              {{ end }}
+              <input type="text" name="email" placeholder="email" value="{{.Form.Get "email"}}">
+            </div>
+
+            <div class="form-field">
+              {{ with .Form.Errors.pass }}
+                <label class="error"> {{.}} </label>
+              {{ end }}
+              <input type="password" name="pass" placeholder="password">
+            </div>
+
+            <div class="form-field">
+              <button type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

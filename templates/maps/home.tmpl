@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="section medium">
+  <div class="container">
+    <h1> maps </h1>
+    <div class="cols">
+      {{ range .MapSets }}
+        <div class="col-lg-4 col-md-6">
+          <a class="map-wrap" href="{{$.Settings.BaseURL}}maps/{{.ShortID}}">
+            <div class="card map-listing">
+              <div class="map-image" style="background-image: url({{$.Settings.BaseURL}}data/{{.ShortID}}/{{.ImageURL}})">
+                <h2 class="map-title"> {{.Title}} {{if .TitleOther}} - {{.TitleOther}} {{end}} </h2>
+              </div>
+              <div class="card-item clearfix">
+                <p class="label"> {{ .ShortID }} </p>
+                <h5 class="m-strip float-left"> {{.Artist}} {{if .ArtistOther}} - {{.ArtistOther}} {{end}} </h5>
+                <h5 class="m-strip float-right"> mapped by: {{.Creator}} </h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

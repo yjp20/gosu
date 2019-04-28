@@ -1,0 +1,57 @@
+{{ define "base/navbar" }}
+<div class="shadow section tiny striped-yellow">
+  <p class="m-strip text-center">pre-pre-alpha</p>
+</div>
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="{{.Settings.BaseURL}}"> gosu! </a>
+    <div class="navbar-group hidden-mobile mr-auto">
+      <a class="navbar-item" href="{{.Settings.BaseURL}}maps">
+        <i class="fas fa-map"></i> maps
+      </a>
+      <a class="navbar-item" href="{{.Settings.BaseURL}}players">
+        <i class="fas fa-users"></i> players
+      </a>
+      <a class="navbar-item" href="{{.Settings.BaseURL}}">
+        <i class="fas fa-comment"></i> forum
+      </a>
+      <a class="navbar-item hidden-md" href="https://github.com/youngjinpark20/gosu">
+        <i class="fab fa-github"></i> git
+      </a>
+    </div>
+    <form class="navbar-search-form" method="get" action="/search" role="search">
+      <input class="navbar-search" placeholder="search ..."/><button class="navbar-search-button" type="submit"> <i class="fas fa-search"></i> </button>
+    </form>
+    <div class="navbar-item navbar-dropdown">
+      <div class="navbar-account">
+        <i class="fas fa-user"></i>
+        {{if .User}}
+          <a href="{{.Settings.BaseURL}}user/{{.User.ShortID}}"> {{.User.Name}} </a>
+          <div class="navbar-dropdown-content">
+            <a class="navbar-item" href="{{.Settings.BaseURL}}user/settings">
+              <i class="fas fa-cog"></i>
+              settings
+            </a>
+            <div class=navbar-dropdown-divider></div>
+            <a class="navbar-item" href="{{.Settings.BaseURL}}user/logout">
+              <i class="fas fa-sign-out-alt"></i>
+              logout
+            </a>
+          </div>
+        {{else}}
+          <div class="navbar-dropdown-content">
+            <a class="navbar-item" href="{{.Settings.BaseURL}}user/login">
+              <i class="fas fa-sign-in-alt"></i> login
+            </a>
+            <a class="navbar-item" href="{{.Settings.BaseURL}}user/signup">
+              <i class="fas fa-user-plus"></i> signup
+            </a>
+          </div>
+        {{end}}
+      </div>
+    </div>
+    <div class="navbar-burger hidden-desktop">
+    </div>
+  </div>
+  </nav>
+{{ end }}

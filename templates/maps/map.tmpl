@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="section large map-main" style="background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)), url({{$.Settings.BaseURL}}data/{{.MapSet.ShortID}}/{{.MapSet.ImageURL}})">
+  <div class="container flex flex-center">
+    <div>
+      <h1 class="map-title"> {{.MapSet.Title}} {{if .MapSet.TitleOther}} - {{.MapSet.TitleOther}} {{end}}</h1>
+      <h2 class="map-artist"> {{.MapSet.Artist}} {{if .MapSet.ArtistOther}} - {{.MapSet.ArtistOther}} {{end}}</h2>
+    </div>
+    <div class="ml-auto">
+      {{ if .Map.ShortID }}
+      <a class="button map-button" href="{{.Settings.BaseURL}}play/{{.Map.ShortID}}"> <i class="fas fa-play"></i> play </a>
+      {{ end }}
+      <a class="button map-button" href="{{.Settings.BaseURL}}data/{{.MapSet.ShortID}}/{{.MapSet.SourceURL}}"><i class="fas fa-download"></i> download source </a>
+    </div>
+  </div>
+</div>
+<div class="section medium">
+  <div class="container">
+    <div class="tabs">
+    {{ range .Maps }}
+      <a class="tab"
+         {{if .Active}} active {{end}}
+         href="{{$.Settings.BaseURL}}maps/{{$.MapSet.ShortID}}/{{.ShortID}}"> {{ .Version }} </a>
+    {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
